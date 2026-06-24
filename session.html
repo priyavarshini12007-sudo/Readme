@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Session Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🌸 Session Management 🌸</h1>
+
+    <h3>Add Training Session</h3>
+
+    <input type="text" id="sessionName" placeholder="Enter Session Name">
+
+    <br><br>
+
+    <button onclick="addSession()">Add Session</button>
+
+    <br><br>
+
+    <h3>Session List</h3>
+
+    <ul id="sessionList"></ul>
+
+    <br>
+
+    <a href="index.html">
+        <button>Home</button>
+    </a>
+
+</div>
+
+<script>
+
+let sessions = JSON.parse(localStorage.getItem("sessions")) || [];
+
+displaySessions();
+
+function addSession()
+{
+    let name = document.getElementById("sessionName").value;
+
+    if(name=="")
+    {
+        alert("Please enter session name");
+        return;
+    }
+
+    sessions.push(name);
+
+    localStorage.setItem("sessions",JSON.stringify(sessions));
+
+    displaySessions();
+
+    document.getElementById("sessionName").value="";
+}
+
+function displaySessions()
+{
+    let list=document.getElementById("sessionList");
+
+    list.innerHTML="";
+
+    sessions.forEach(function(session)
+    {
+        list.innerHTML += "<li>"+session+"</li>";
+    });
+}
+
+</script>
+
+</body>
+</html>

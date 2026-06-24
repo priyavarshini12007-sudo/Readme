@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Attendance Management</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Attendance Management</h1>
+
+<h3>Mark Attendance</h3>
+
+<select id="attendanceName"></select>
+
+<br><br>
+
+<select id="attendanceSession"></select>
+
+<br><br>
+
+<button onclick="markAttendance('Present')">Present</button>
+
+<button onclick="markAttendance('Absent')">Absent</button> 
+
+<br><br>
+
+<div class="attendance-summary">
+    <div class="summary-card">
+        <strong>Present</strong>
+        <div id="presentCount">0</div>
+    </div>
+    <div class="summary-card">
+        <strong>Absent</strong>
+        <div id="absentCount">0</div>
+    </div>
+    <div class="summary-card">
+        <strong>Total Records</strong>
+        <div id="recordCount">0</div>
+    </div>
+</div>
+
+<h3>Attendance Log</h3>
+<ul id="attendanceList"></ul>
+
+<br>
+
+<a href="index.html">
+<button>Home</button>
+</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
